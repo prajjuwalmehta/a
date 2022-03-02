@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int t;
+  cin >> t;
+  while (t > 0)
+{
+      int n, key, flag = 0, c = 0, i;
+      cin >> n;
+      int a[n];
+      for (i = 0; i < n; i++)
+	{
+	  cin >> a[i];
+	}
+      cin >> key;
+      int low=0,high=n-1;
+      while (low<=high)
+      {    c++;
+          int mid=low+high/2;
+          if(a[mid]==key)
+          {
+              flag=1;
+              break;
+          }
+          else if(a[mid]<key)
+                  low=mid+1;
+          else
+              high=mid-1;
+      }
+      if(flag==1)
+      {
+          cout<<"found after "<<c<<" comparisons"<<endl;
+      }
+      else
+      cout<<"not found after "<<c<<" comparisons"<<endl;
+}
+}
